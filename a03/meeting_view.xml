@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        <record  id="amos_meeting3_form_view" model="ir.ui.view">
+            <field name="name">amos_meeting3_form</field>
+            <field name="type">form</field>
+            <field name="model">amos.meeting3</field>
+            <field name="arch" type="xml">
+                <form string="会议3" version="7.0">
+                    <sheet>
+                        <group string="人数">
+						
+
+
+                        <field name="row"/>
+						<field name='price'/>
+						<field name='boolean'/>
+						<field name='binary'/>
+						<field name='state'/>
+
+                         </group>
+                  <group string="会议3">
+                    <field name="name" />
+                   </group>
+                        <notebook>
+                        <page string="备注">
+                         <group>
+                          <group>
+                            <field name="note" />
+                              <field name ='product_id'/>
+
+
+
+                            </group>
+                            <group>
+                               <field name ='product_id' on_change="onchange_product_id(product_id)"/>
+                              <field name ='uom_id'/>
+                            </group>
+                             <group>
+                               <field name ='product_id'/>
+
+                            </group>
+
+                            </group>
+                            </page>
+                            <page string="备注2">
+                          <field name="user_id" />
+
+
+
+
+                        </page>
+                        </notebook>
+
+
+
+                    </sheet>
+                    <sheet>
+                        <group string="新增加">
+
+                   </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+         <record model="ir.ui.view" id="amos_meeting3_tree_view">
+            <field name="name">amos_meeting3_tree</field>
+            <field name="type">tree</field>
+            <field name="model">amos.meeting3</field>
+            <field name="arch" type="xml">
+                <tree string="会议3列表" version="7.0">
+
+                    <field name="name"/>
+                    <field name="note"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+
+
+         <record model="ir.actions.act_window" id="amos_meeting3_action">
+            <field name="name">amos.meeting3.action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">amos.meeting3</field>
+             <field name="view_type">form</field>
+             <field name="limit">10</field>
+             <field name="view_mode">form,tree</field>
+             <field name="view_id" ref="amos_meeting3_tree_view"/>
+            <field name="help" type="html">
+
+
+                    <p class="oe_class_amos_meeting3">
+
+                        会议模块
+                    </p>
+
+                    <field name="name"/>
+                    <field name="note"/>
+
+
+            </field>
+        </record>
+
+
+
+    <menuitem id="meeting_one_menu3" name="会议3"/>
+    <menuitem id="meeting_two_menu3" name="会议3" parent="meeting_one_menu3"/>
+    <menuitem id="meeting_tree_menu3" name="会议3" parent="meeting_two_menu3" action="amos_meeting3_action" />
+
+
+
+
+
+
+</data>
+</openerp>
